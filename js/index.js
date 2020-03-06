@@ -118,6 +118,23 @@ contactText[2].textContent = siteContent["contact"]["email"];
 footerText.textContent = siteContent["footer"]["copyright"]
 
 
+// Task 3: Add new content
+//  Change the color of the navigation text to be green.
+
+for (i = 0; i < headerNav.children.length; i++) {
+  headerNav.children[i].style.color = "green";
+}
 
 
+//  Utilize .appendChild() and .prepend() to add two new items to the navigation system. You can call them whatever you w
+const headerChild1 = document.createElement("a");
+const headerChild2 = document.createElement("a");
 
+headerChild1.textContent = "Hi there!";
+headerChild2.textContent = "well, hello!";
+
+headerNav.appendChild(headerChild1);
+headerNav.prepend(headerChild2);
+
+
+//  Check your work by looking at the original html in the browser
