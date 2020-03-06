@@ -63,6 +63,13 @@ let ctaButton = document.querySelector(".cta-text button");
 let mainH4 = document.querySelectorAll(".text-content h4");
 let mainText = document.querySelectorAll(".text-content p");
 
+//contact
+let contactHeader = document.querySelector(".contact h4");
+let contactText = document.querySelectorAll(".contact p");
+
+//footer
+let footerText = document.querySelector("footer p");
+
 //Task 2: Update the HTML with the JSON data
  //Remember, NO direct updating of the HTML source is allowed.
  //Using your selectors, update the content to match the example file.
@@ -100,14 +107,17 @@ mainText[2].textContent = siteContent["main-content"]["services-content"];
 mainText[3].textContent = siteContent["main-content"]["product-content"];
 mainText[4].textContent = siteContent["main-content"]["vision-content"];
 
+//contact
+contactHeader.textContent = siteContent["contact"]["contact-h4"];
+
+contactText[0].textContent = siteContent["contact"]["address"];
+contactText[1].textContent = siteContent["contact"]["phone"];
+contactText[2].textContent = siteContent["contact"]["email"];
+
+//footer
+footerText.textContent = siteContent["footer"]["copyright"]
 
 
 
 
 
-
-//   "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-
-
-//   "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-// },
