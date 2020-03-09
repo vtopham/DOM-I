@@ -81,12 +81,9 @@ mainImg.src = siteContent["main-content"]["middle-img-src"];
  
 
 //header nav
-headerNav.children[0].text = siteContent["nav"]["nav-item-1"];
-headerNav.children[1].text = siteContent["nav"]["nav-item-2"];
-headerNav.children[2].text = siteContent["nav"]["nav-item-3"];
-headerNav.children[3].text = siteContent["nav"]["nav-item-4"];
-headerNav.children[4].text = siteContent["nav"]["nav-item-5"];
-headerNav.children[5].text = siteContent["nav"]["nav-item-6"];
+for (let i = 0; i < headerNav.children.length; i++) {
+  headerNav.children[i].textContent = siteContent["nav"]["nav-item-"+ (i + 1)]
+}
 
 
 //CTA content
@@ -94,7 +91,6 @@ ctaHeadline.textContent = siteContent["cta"]["h1"];
 ctaButton.textContent = siteContent["cta"]["button"];
 
 //main content
-
 mainH4[0].textContent = siteContent["main-content"]["features-h4"];
 mainH4[1].textContent = siteContent["main-content"]["about-h4"];
 mainH4[2].textContent = siteContent["main-content"]["services-h4"];
