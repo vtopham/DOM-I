@@ -40,3 +40,97 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+//Task 1: Create selectors to point your data into elements
+ //Create selectors by using any of the DOM element's methods
+ // Note that IDs have been used on all images. Use the IDs to update src path content
+
+
+
+//images
+let ctaImg = document.getElementById("cta-img"); 
+let mainImg = document.getElementById("middle-img");
+
+//nav
+let headerNav = document.querySelector("header nav"); 
+
+//CTA
+let ctaHeadline = document.querySelector(".cta-text h1"); 
+let ctaButton = document.querySelector(".cta-text button");
+
+//main content
+let mainH4 = document.querySelectorAll(".text-content h4");
+let mainText = document.querySelectorAll(".text-content p");
+
+//contact
+let contactHeader = document.querySelector(".contact h4");
+let contactText = document.querySelectorAll(".contact p");
+
+//footer
+let footerText = document.querySelector("footer p");
+
+//Task 2: Update the HTML with the JSON data
+ //Remember, NO direct updating of the HTML source is allowed.
+ //Using your selectors, update the content to match the example file.
+ //Remember to update the src attributes on images
+
+//update images
+ctaImg.src = siteContent["cta"]["img-src"];
+mainImg.src = siteContent["main-content"]["middle-img-src"];
+ 
+
+//header nav
+for (let i = 0; i < headerNav.children.length; i++) {
+  headerNav.children[i].textContent = siteContent["nav"]["nav-item-"+ (i + 1)]
+}
+
+
+//CTA content
+ctaHeadline.textContent = siteContent["cta"]["h1"];
+ctaButton.textContent = siteContent["cta"]["button"];
+
+//main content
+mainH4[0].textContent = siteContent["main-content"]["features-h4"];
+mainH4[1].textContent = siteContent["main-content"]["about-h4"];
+mainH4[2].textContent = siteContent["main-content"]["services-h4"];
+mainH4[3].textContent = siteContent["main-content"]["product-h4"];
+mainH4[4].textContent = siteContent["main-content"]["vision-h4"];
+
+mainText[0].textContent = siteContent["main-content"]["features-content"];
+mainText[1].textContent = siteContent["main-content"]["about-content"];
+mainText[2].textContent = siteContent["main-content"]["services-content"];
+mainText[3].textContent = siteContent["main-content"]["product-content"];
+mainText[4].textContent = siteContent["main-content"]["vision-content"];
+
+//contact
+contactHeader.textContent = siteContent["contact"]["contact-h4"];
+
+contactText[0].textContent = siteContent["contact"]["address"];
+contactText[1].textContent = siteContent["contact"]["phone"];
+contactText[2].textContent = siteContent["contact"]["email"];
+
+//footer
+footerText.textContent = siteContent["footer"]["copyright"]
+
+
+// Task 3: Add new content
+//  Change the color of the navigation text to be green.
+
+for (i = 0; i < headerNav.children.length; i++) {
+  headerNav.children[i].style.color = "green";
+}
+
+
+//  Utilize .appendChild() and .prepend() to add two new items to the navigation system. You can call them whatever you w
+const headerChild1 = document.createElement("a");
+const headerChild2 = document.createElement("a");
+
+headerChild1.textContent = "Hi there!";
+headerChild2.textContent = "well, hello!";
+
+headerNav.appendChild(headerChild1);
+headerNav.prepend(headerChild2);
+
+
+//  Check your work by looking at the original html in the browser
